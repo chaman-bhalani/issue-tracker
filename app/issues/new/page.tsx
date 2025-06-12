@@ -59,7 +59,12 @@ const NewIssuePage = () => {
         />
         <ErrorMessage>{errors.description?.message}</ErrorMessage>
         <Button disabled={isSubmitting}>
-          Submit New Issue {isSubmitting && <Spinner />}
+          Submit New Issue{" "}
+          {isSubmitting && (
+            <span className="ml-2">
+              <Spinner />
+            </span>
+          )}
         </Button>
       </form>
     </div>
