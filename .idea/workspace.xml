@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61ad2f57-1d7e-45ab-b8ad-0f338c94e54c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/issues/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/issues/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/validationSchemas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/validationSchemas.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
