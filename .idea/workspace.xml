@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61ad2f57-1d7e-45ab-b8ad-0f338c94e54c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/NavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/issues/[id]/DeleteIssueButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/issues/[id]/DeleteIssueButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/issues/[id]/EditIssueButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/issues/[id]/EditIssueButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/issues/[id]/edit/loading.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/issues/[id]/edit/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/issues/_components/IssueForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/issues/_components/IssueForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/issues/issueAction.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/issues/loading.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/issues/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
