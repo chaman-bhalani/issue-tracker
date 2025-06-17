@@ -53,10 +53,11 @@ const NavBar = () => {
                   <span>
                     <Avatar
                       src={session.user!.image!}
-                      fallback={session.user?.name?.[0]?.toUpperCase() || "?"}
+                      fallback={"?"}
                       size="2"
                       radius="full"
                       className="cursor-pointer"
+                      referrerPolicy="no-referrer"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = "";
                       }}
