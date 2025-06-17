@@ -56,9 +56,6 @@ const AuthStatus = () => {
                 radius="full"
                 className="cursor-pointer"
                 referrerPolicy="no-referrer"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = "";
-                }}
               />
             </span>
           </DropdownMenu.Trigger>
