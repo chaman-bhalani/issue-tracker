@@ -1,7 +1,6 @@
 import { Card, Flex, Text } from "@radix-ui/themes";
-import React from "react";
-import { Status } from "./generated/prisma";
 import Link from "next/link";
+import { Status } from "./generated/prisma";
 
 interface Props {
   open: number;

@@ -4,6 +4,7 @@ import prisma from "@/prisma/client";
 import IssueAction from "./issueAction";
 import IssueTable, { columnNames, IssueQuery } from "./IssueTable";
 import { Flex } from "@radix-ui/themes";
+import { Metadata } from "next";
 
 interface Props {
   searchParams: IssueQuery;
@@ -32,7 +33,7 @@ const IssuesPage = async ({ searchParams }: Props) => {
 
   const issueCount = await prisma.issue.count({ where });
   return (
-    <Flex direction='column' gap='3'>
+    <Flex direction="column" gap="3">
       <IssueAction />
       <IssueTable searchParams={searchParams} issues={issues} />
       <Pagination
@@ -45,3 +46,27 @@ const IssuesPage = async ({ searchParams }: Props) => {
 };
 
 export default IssuesPage;
+
+export const metadata: Metadata = {
+  title: "Issue Tracker - Issues",
+  description: "Manage and track your issues efficiently.",
+  openGraph: {
+    title: "Issue Tracker - Issues",
+    description: "Manage and track your issues efficiently.",
+    url: "https://yourdomain.com/issues",
+    siteName: "Issue Tracker",
+    images: [
+      {
+        url: "https://yourdomain.com/og-image-issues.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Issue Tracker - Issues",
+    description: "Manage and track your issues efficiently.",
+    images: ["https://yourdomain.com/twitter-image-issues.png"],
+  },
+};
