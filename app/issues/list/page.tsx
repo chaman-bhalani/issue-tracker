@@ -26,13 +26,25 @@ const IssuesPage = async ({ searchParams }: Props) => {
     ? (searchParams.status as Status)
     : undefined;
 
-  const orderBy = searchParams.orderBy
-    ? { [searchParams.orderBy]: "asc" }
+  const validOrderFields: (keyof Issue)[] = [
+    "id",
+    "title",
+    "description",
+    "status",
+    "ceatedAt",
+    "updatedAt",
+    "assignedToUserId",
+  ];
+
+  const orderByField = validOrderFields.includes(
+    searchParams.orderBy as keyof Issue
+  )
+    ? (searchParams.orderBy as keyof Issue)
     : undefined;
 
   const issues = await prisma.issue.findMany({
-    where: { status },
-    orderBy,
+    where: status ? { status } : undefined,
+    ...(orderByField && { orderBy: { [orderByField]: "asc" } }),
   });
 
   return (
@@ -52,15 +64,11 @@ const IssuesPage = async ({ searchParams }: Props) => {
                   key={column.value}
                   className={column.classname}
                 >
-                  <NextLink
-                    href={{
-                      query: { ...searchParams, orderBy: column.value },
-                    }}
-                  >
+                  <NextLink href={`/issues/list?${params.toString()}`}>
                     {column.label}
                   </NextLink>
-                  {column.value === searchParams.orderBy && (
-                    <ArrowUpIcon className="inline" />
+                  {column.value === orderByField && (
+                    <ArrowUpIcon className="inline ml-1" />
                   )}
                 </Table.ColumnHeaderCell>
               );
