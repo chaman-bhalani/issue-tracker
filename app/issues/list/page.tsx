@@ -1,20 +1,25 @@
-import Pagination from "@/app/components/Pagination";
-import { Issue, Status } from "@/app/generated/prisma";
+// app/issues/list/page.tsx
+
+
+import { Flex } from "@radix-ui/themes";
 import prisma from "@/prisma/client";
+import { Issue, Status } from "@/app/generated/prisma";
 import IssueAction from "./issueAction";
 import IssueTable, { columnNames, IssueQuery } from "./IssueTable";
-import { Flex } from "@radix-ui/themes";
-import { Metadata } from "next";
+import Pagination from "@/app/components/Pagination";
+import { Metadata } from "next/types";
+import { Suspense } from "react";
 
 interface Props {
   searchParams: IssueQuery;
 }
 
-const IssuesPage = async ({ searchParams }: Props) => {
+const IssuesListPage = async ({ searchParams }: Props) => {
   const validStatuses = Object.values(Status);
   const status = validStatuses.includes(searchParams.status as Status)
     ? (searchParams.status as Status)
     : undefined;
+
   const where = { status };
 
   const orderBy = columnNames.includes(searchParams.orderBy as keyof Issue)
@@ -32,10 +37,13 @@ const IssuesPage = async ({ searchParams }: Props) => {
   });
 
   const issueCount = await prisma.issue.count({ where });
+
   return (
     <Flex direction="column" gap="3">
       <IssueAction />
+      <Suspense>
       <IssueTable searchParams={searchParams} issues={issues} />
+      </Suspense>
       <Pagination
         pageSize={pageSize}
         currentPage={page}
@@ -44,8 +52,6 @@ const IssuesPage = async ({ searchParams }: Props) => {
     </Flex>
   );
 };
-
-export default IssuesPage;
 
 export const metadata: Metadata = {
   title: "Issue Tracker - Issues",
@@ -70,3 +76,5 @@ export const metadata: Metadata = {
     images: ["https://yourdomain.com/twitter-image-issues.png"],
   },
 };
+
+export default IssuesListPage;
